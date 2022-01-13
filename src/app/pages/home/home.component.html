@@ -1,0 +1,13 @@
+<h4 style="text-decoration: underline">About us</h4>
+<p style="font-size: 20px; font-weight: lighter; margin-bottom: 75px">
+  We are an animal adoption center based out of east Texas. We have two
+  locations with varying hours. Schedule an appointment or just stop by to meet
+  our animals!
+</p>
+<div id="store-cards">
+  <app-store-card
+    *ngFor="let store of stores"
+    [data]="store"
+    (click)="storeCardClickHandler(store)"
+  ></app-store-card>
+</div>

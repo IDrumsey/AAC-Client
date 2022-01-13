@@ -1,0 +1,71 @@
+.add-pictures-form {
+  width: 50%;
+  min-height: 50%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 2px solid #000;
+  z-index: 10;
+}
+
+#pictures {
+  display: none;
+}
+
+#close-btn {
+  color: rgb(228, 49, 49);
+  font-size: 35px;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+#close-btn:hover {
+  cursor: pointer;
+}
+
+#close-wrapper {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+#picker-btn {
+  width: 50%;
+  height: 50px;
+  border: 2px solid #000;
+  padding: 5px 10px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  color: rgb(41, 41, 41);
+}
+
+#picker-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 5px #000;
+}
+
+#file-icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+#picker-btn-title {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+#pictures-form-preview-gallery {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.preview-image {
+  width: 100%;
+}
+
+#submit-btn {
+  display: block;
+  margin: auto auto;
+}

@@ -1,0 +1,13 @@
+<div
+  class="btn btn-primary mb-5 py-2 px-5"
+  [routerLink]="['/centers', centerId, 'animals', 'all']"
+>
+  <h5 class="m-0">See all animals</h5>
+</div>
+<div id="center-animal-categories" *ngIf="dataLoaded">
+  <app-animal-category-card
+    *ngFor="let category of getAnimalCategories()"
+    [categoryName]="category"
+    [routerLink]="['/centers', centerId, 'animals', category]"
+  ></app-animal-category-card>
+</div>

@@ -1,0 +1,31 @@
+ISSUES - 
+
+    left side nav bar - each btn has margin under it. Can't get the :not(:last-child) selector to work to remove the margin from the last btn since it doesn't need it.
+
+    cache is being updated ALOT. should take a look at it at some point. See 'I-1'
+
+    notification delete animation not running. See I-2
+
+    getTime() being called several times. binded to value attribute. See I-3
+
+    caching might not be accounting for the endpoint http verbs being used leading to not getting the up to date data from server because app gets it from cache accidentally
+
+    strobing might happen on slower systems when the two hover events conflict - See I-4
+
+    screen flicker on /centers/1 when loading data from cache
+
+FEATURES TO IMPLEMENT - 
+
+    image preview delete single image from selection - https://stackoverflow.com/questions/53536826/angular-how-to-add-remove-files-in-the-angular
+
+    server side - check if an image already exists to not waste memory
+
+    notification click to continue required. See F-1
+
+    delete changes confirmation on logout during store detail changes. See F-2
+
+    Require both open and close times when adding store times. See F-3
+
+    See animals center details dynamic routing
+
+    animal info form location default to currently selected animal

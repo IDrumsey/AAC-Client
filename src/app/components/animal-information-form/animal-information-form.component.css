@@ -1,0 +1,34 @@
+#form-title {
+  margin-bottom: 25px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: #f00;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+.valid-msg {
+  color: #0f0;
+}
+
+.invalid-msg {
+  color: #dc3545;
+}
+
+#image-previews {
+  row-gap: 25px;
+}
+
+#update-animal-pictures-notification {
+  color: #dc3545;
+}
+
+#update-animal-pictures-notification em:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

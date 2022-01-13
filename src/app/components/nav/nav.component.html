@@ -1,0 +1,15 @@
+<div class="nav">
+  <div id="nav-btns">
+    <fa-icon
+      *ngIf="showingBackBtn"
+      id="back-btn"
+      [icon]="backBtn"
+      (click)="backBtnClickHandler()"
+    ></fa-icon>
+  </div>
+  <app-nav-item
+    *ngFor="let item of navItems; let last = last"
+    [data]="item"
+  ></app-nav-item>
+  <small class="text-danger">These links aren't currently implemented</small>
+</div>

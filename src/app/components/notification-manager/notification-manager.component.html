@@ -1,0 +1,6 @@
+<app-notification
+  *ngFor="let note of notifications"
+  [bgColor]="note.bgColor"
+  [message]="note.message"
+  (click)="deleteNotification(note.id)"
+></app-notification>

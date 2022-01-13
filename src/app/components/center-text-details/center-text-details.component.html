@@ -1,0 +1,204 @@
+<div
+  class="store-text-details-wrapper"
+  *ngIf="!isEditing"
+  [ngStyle]="getWrapperStyles()"
+>
+  <fa-icon
+    [icon]="editIcon"
+    class="edit-btn"
+    *ngIf="isEditable"
+    (mouseenter)="onEditBtnMouseOver()"
+    (mouseleave)="onEditBtnMouseOut()"
+    (click)="onEditBtnClick()"
+  ></fa-icon>
+  <h3 *ngIf="!storeBasicDataLoading" id="store-address">{{ store.address }}</h3>
+  <!-- center hours -->
+  <!-- Sunday -->
+  <div class="hours" *ngIf="!storeHoursDataLoading">
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Sunday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Sunday.open != null && storeHours.Sunday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Sunday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Sunday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Sunday.open == null && storeHours.Sunday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Monday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Monday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Monday.open != null && storeHours.Monday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Monday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Monday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Monday.open == null && storeHours.Monday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Tuesday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Tuesday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Tuesday.open != null && storeHours.Tuesday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Tuesday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Tuesday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Tuesday.open == null && storeHours.Tuesday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Wednesday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Wednesday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Wednesday.open != null &&
+          storeHours.Wednesday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Wednesday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Wednesday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Wednesday.open == null &&
+          storeHours.Wednesday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Thursday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Thursday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Thursday.open != null && storeHours.Thursday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Thursday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Thursday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Thursday.open == null && storeHours.Thursday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Friday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Friday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Friday.open != null && storeHours.Friday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Friday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Friday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Friday.open == null && storeHours.Friday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+    <!-- Saturday -->
+    <div class="store-hours-card">
+      <h5 class="hours-day-name">{{ storeHours.Saturday.day }}</h5>
+      <div
+        class="times"
+        *ngIf="
+          storeHours.Saturday.open != null && storeHours.Saturday.close != null
+        "
+      >
+        <p class="open-time">
+          Open: {{ formatHourStringReferer(storeHours.Saturday.open) }}
+        </p>
+        <p class="close-time">
+          Close: {{ formatHourStringReferer(storeHours.Saturday.close) }}
+        </p>
+      </div>
+      <p
+        class="closed-msg"
+        *ngIf="
+          storeHours.Saturday.open == null && storeHours.Saturday.close == null
+        "
+      >
+        Closed
+      </p>
+    </div>
+  </div>
+</div>
+
+<app-edit-store-form
+  class="store-text-details-edit-form"
+  *ngIf="isEditing"
+  [store]="store"
+  [hours]="storeHours"
+  (storeDetailsUpdatedEvent)="onDetailsUpdated()"
+  (cancelEditStoreDetailsEvent)="closeEditDetailsForm()"
+></app-edit-store-form>

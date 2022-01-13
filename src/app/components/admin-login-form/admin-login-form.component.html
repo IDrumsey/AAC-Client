@@ -1,0 +1,68 @@
+<form id="admin-login-form" [formGroup]="form" (ngSubmit)="onFormSubmitClick()">
+  <div id="form-header">
+    <h4>Admin login</h4>
+    <fa-icon
+      id="admin-login-form-close-btn"
+      [icon]="closeBtn"
+      (click)="onCloseClick()"
+    ></fa-icon>
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      type="email"
+      class="form-control"
+      id="username-input"
+      formControlName="username"
+    />
+    <!-- username field required error message -->
+    <div
+      class="row"
+      *ngIf="
+        form.controls['username'].dirty &&
+        form.controls['username'].errors?.required
+      "
+    >
+      <div class="col-12">
+        <p class="validation-error-message">Username is required</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password-input">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password-input"
+      formControlName="password"
+    />
+    <!-- password field required error message -->
+    <div
+      class="row"
+      *ngIf="
+        form.controls['password'].dirty &&
+        form.controls['password'].errors?.required
+      "
+    >
+      <div class="col-12">
+        <p class="validation-error-message">Password is required</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="loginFailedMsg">
+    <div class="col">
+      <p id="error-message">{{ loginFailedMsg }}</p>
+    </div>
+  </div>
+  <h5 id="forgot-password-btn" (click)="onForgotPasswordClick()">
+    Forgot password
+  </h5>
+  <button
+    [disabled]="!form.valid"
+    id="login-btn"
+    type="submit"
+    class="btn btn-primary"
+  >
+    Login
+  </button>
+</form>

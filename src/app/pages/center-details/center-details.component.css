@@ -1,0 +1,48 @@
+#store-picture-gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+img {
+  padding: 0;
+}
+
+app-add-button {
+  /* https://stackoverflow.com/questions/19162889/how-to-center-font-awesome-icons-horizontally */
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+app-center-text-details {
+  margin-top: 25px;
+}
+
+.open-status {
+  margin-bottom: 25px;
+}
+
+#status-open {
+  color: #3ba16e;
+}
+
+#status-closed {
+  color: #f54251;
+}
+
+#see-animals-btn {
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+#see-animals-btn:hover {
+  cursor: pointer;
+}
+
+#see-animals-btn-title {
+  margin: 0;
+}

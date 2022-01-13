@@ -1,0 +1,17 @@
+/* https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation */
+#admin-toolbar {
+  border-top: 2px solid #000;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding: 10px 25px;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+}
+
+#admin-toolbar::-webkit-scrollbar {
+  display: none;
+}

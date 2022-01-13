@@ -1,0 +1,45 @@
+<form class="form-control add-pictures-form" (ngSubmit)="onSubmit()">
+  <div id="close-wrapper">
+    <!-- https://stackoverflow.com/questions/53584875/how-to-create-a-custom-file-upload-button-in-angular -->
+    <div id="picker-btn" (click)="picturePicker.click()">
+      <input
+        #picturePicker
+        type="file"
+        name="pictures"
+        id="pictures"
+        multiple
+        (change)="onFilesChosen($event)"
+      />
+      <fa-icon id="file-icon" [icon]="fileIcon"></fa-icon>
+      <h3 id="picker-btn-title">Files</h3>
+    </div>
+    <fa-icon
+      id="close-btn"
+      [icon]="closeBtnIcon"
+      (click)="signalClose()"
+    ></fa-icon>
+  </div>
+  <div class="row" id="pictures-form-preview-gallery">
+    <!-- image previews -->
+    <div class="col-4" *ngFor="let image of imagePreviews">
+      <img
+        class="preview-image"
+        src="{{ image }}"
+        (dblclick)="removeSelectedPicture($event)"
+      />
+    </div>
+  </div>
+  <button
+    id="submit-btn"
+    class="btn btn-primary"
+    [disabled]="isSubmitBtnDisabled"
+  >
+    Add Store Pictures
+  </button>
+</form>
+
+<app-notification
+  *ngIf="isShowingNotification"
+  [bgColor]="'#f00'"
+  [message]="'You are not authenticated'"
+></app-notification>

@@ -1,0 +1,201 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="address">Address</label>
+  <input
+    type="text"
+    name="address"
+    id="address"
+    class="form-control input-section"
+    formControlName="address"
+  />
+  <div class="input-section SundayHours">
+    <h4>Sunday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="SundayOpen"
+          id="SundayOpen"
+          class="form-control"
+          formControlName="SundayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="SundayClose"
+          id="SundayClose"
+          class="form-control"
+          formControlName="SundayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section MondayHours">
+    <h4>Monday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="MondayOpen"
+          id="MondayOpen"
+          class="form-control"
+          formControlName="MondayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="MondayClose"
+          id="MondayClose"
+          class="form-control"
+          formControlName="MondayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section TuesdayHours">
+    <h4>Tuesday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="TuesdayOpen"
+          id="TuesdayOpen"
+          class="form-control"
+          formControlName="TuesdayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="TuesdayClose"
+          id="TuesdayClose"
+          class="form-control"
+          formControlName="TuesdayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section WednesdayHours">
+    <h4>Wednesday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="WednesdayOpen"
+          id="WednesdayOpen"
+          class="form-control"
+          formControlName="WednesdayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="WednesdayClose"
+          id="WednesdayClose"
+          class="form-control"
+          formControlName="WednesdayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section ThursdayHours">
+    <h4>Thursday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="ThursdayOpen"
+          id="ThursdayOpen"
+          class="form-control"
+          formControlName="ThursdayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="ThursdayClose"
+          id="ThursdayClose"
+          class="form-control"
+          formControlName="ThursdayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section FridayHours">
+    <h4>Friday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="FridayOpen"
+          id="FridayOpen"
+          class="form-control"
+          formControlName="FridayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="FridayClose"
+          id="FridayClose"
+          class="form-control"
+          formControlName="FridayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="input-section SaturdayHours">
+    <h4>Saturday Hours</h4>
+    <div class="time-inputs">
+      <div>
+        <h5>Open</h5>
+        <input
+          type="time"
+          name="SaturdayOpen"
+          id="SaturdayOpen"
+          class="form-control"
+          formControlName="SaturdayHoursOpen"
+        />
+      </div>
+      <div>
+        <h5>Close</h5>
+        <input
+          type="time"
+          name="SaturdayClose"
+          id="SaturdayClose"
+          class="form-control"
+          formControlName="SaturdayHoursClose"
+        />
+      </div>
+    </div>
+  </div>
+  <div id="btns">
+    <button
+      id="store-text-change-cancel-btn"
+      class="btn btn-danger"
+      (click)="onCancelBtnClick()"
+    >
+      Cancel
+    </button>
+    <button
+      type="submit"
+      id="store-text-change-submit-btn"
+      class="btn btn-primary"
+    >
+      Submit Changes
+    </button>
+  </div>
+</form>

@@ -1,0 +1,41 @@
+<div
+  *ngIf="!dataLoading"
+  id="see-animals-btn"
+  class="btn btn-success"
+  (click)="routeToAnimals()"
+>
+  <h4 id="see-animals-btn-title">See our animals!</h4>
+</div>
+<div *ngIf="openStatusReady">
+  <h5 *ngIf="isCurrentlyOpen" id="status-open" class="open-status">
+    Good news, we're open!
+  </h5>
+  <h5 *ngIf="!isCurrentlyOpen" id="status-closed" class="open-status">
+    Whelp, we're closed right now, but have a look around the website
+  </h5>
+</div>
+<h5>Pictures of our building</h5>
+<div class="row" id="store-picture-gallery">
+  <img
+    *ngFor="let picture of pictures"
+    src="{{ 'http://localhost:5000/Images/Stores/' + picture }}"
+    alt="store-image"
+  />
+</div>
+<app-add-button
+  *ngIf="isAdmin"
+  [buttonColor]="'#21965a'"
+  [buttonSize]="'30px'"
+  (click)="openAddPicturesForm()"
+></app-add-button>
+<app-add-pictures-form
+  *ngIf="isShowingAddPicturesForm"
+  [submitBtnTitle]="'Add store pictures'"
+  (addPicturesFormCloseEvent)="closeAddPicturesForm()"
+  (picturesAddedEvent)="setStorePictures($event)"
+></app-add-pictures-form>
+<!-- information details -->
+<app-center-text-details
+  *ngIf="isShowingInformation"
+  (timeChangeEvent)="onStoreHoursUpdated($event)"
+></app-center-text-details>

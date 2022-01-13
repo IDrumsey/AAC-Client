@@ -1,0 +1,25 @@
+<div class="card">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <!--  I-4 -->
+  <fa-icon
+    class="see-center-animals-link-btn"
+    [icon]="pawIcon"
+    [@togglePawAnimation]="pawState"
+    (mouseenter)="togglePaw(true)"
+    (mouseleave)="togglePaw(false)"
+    (click)="onPawClick()"
+    title="See this center's animals"
+  ></fa-icon>
+  <!--  I-4 -->
+  <img
+    src="{{ 'http://localhost:5000/Images/Stores/' + getPicturePath() }}"
+    alt="store image"
+    class="card-img-top"
+    (mouseenter)="togglePaw(true)"
+    (mouseleave)="togglePaw(false)"
+    (load)="onImageLoad()"
+  />
+  <div class="card-body">
+    <div class="card-title">{{ data.address }} Center</div>
+  </div>
+</div>

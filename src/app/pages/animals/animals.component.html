@@ -1,0 +1,7 @@
+<div id="animals" *ngIf="dataLoaded">
+  <app-animal-card
+    *ngFor="let animal of getAnimalsInClassification()"
+    [animal]="animal"
+    [routerLink]="['/animals', animal.animalId]"
+  ></app-animal-card>
+</div>

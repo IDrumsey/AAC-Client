@@ -1,0 +1,5 @@
+#center-animal-categories {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 25px;
+}

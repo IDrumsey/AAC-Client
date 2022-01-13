@@ -1,0 +1,17 @@
+.nav-item {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.nav-item-btn {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,311 @@
+<h4 id="form-title">Animal information</h4>
+<form [formGroup]="formData" (ngSubmit)="submitBtnClickHandler()">
+  <div class="row">
+    <div class="col-5">
+      <select
+        formControlName="storeId"
+        name="location"
+        id="location"
+        class="form-select"
+        required
+      >
+        <option
+          *ngFor="let location of locations"
+          value="{{ location.storeId }}"
+        >
+          {{ location.address }}
+        </option>
+      </select>
+    </div>
+    <!-- General validation message -->
+    <div class="col">
+      <input
+        type="text"
+        name="classification"
+        id="classification"
+        class="form-control"
+        placeholder="Classification (Dog, Cat)"
+        formControlName="classification"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <!-- Name required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['name'].dirty &&
+          formData.controls['name'].errors?.required
+        "
+      >
+        Required
+      </p>
+      <!-- Name minLength validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['name'].dirty &&
+          formData.controls['name'].errors?.minlength
+        "
+      >
+        Name field needs to be at least 3 characters
+      </p>
+    </div>
+    <div class="col-4">
+      <input
+        type="number"
+        name="age"
+        id="age"
+        class="form-control"
+        placeholder="Age"
+        formControlName="age"
+      />
+      <!-- Age required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['age'].dirty &&
+          formData.controls['age'].errors?.required
+        "
+      >
+        Required
+      </p>
+      <!-- Age min validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['age'].dirty && formData.controls['age'].errors?.min
+        "
+      >
+        Age must be 0 or positive
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <input
+        type="text"
+        name="breed"
+        id="breed"
+        class="form-control"
+        placeholder="Breed"
+        formControlName="breed"
+      />
+      <!-- Breed required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['breed'].dirty &&
+          formData.controls['breed'].errors?.required
+        "
+      >
+        Required
+      </p>
+    </div>
+    <div class="col">
+      <select
+        name="gender"
+        id="gender"
+        class="form-select"
+        formControlName="gender"
+      >
+        <option selected value="female">female</option>
+        <option value="male">male</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-floating">
+        <input
+          type="number"
+          name="weight"
+          id="weight"
+          class="form-control"
+          placeholder="Weight (lbs)"
+          formControlName="weight"
+        />
+        <label for="weight">Weight (lbs)</label>
+        <!-- Weight required validation error -->
+        <p
+          class="error-msg"
+          *ngIf="
+            formData.controls['weight'].dirty &&
+            formData.controls['weight'].errors?.required
+          "
+        >
+          Required
+        </p>
+        <!-- Weight min validation error -->
+        <p
+          class="error-msg"
+          *ngIf="
+            formData.controls['weight'].dirty &&
+            formData.controls['weight'].errors?.min
+          "
+        >
+          Animal's weight must be positive
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating">
+        <input
+          type="number"
+          name="height"
+          id="height"
+          class="form-control"
+          placeholder="Height (inches)"
+          formControlName="height"
+        />
+        <label for="height">Height (inches)</label>
+        <!-- Height required validation error -->
+        <p
+          class="error-msg"
+          *ngIf="
+            formData.controls['height'].dirty &&
+            formData.controls['height'].errors?.required
+          "
+        >
+          Required
+        </p>
+        <!-- Height min validation error -->
+        <p
+          class="error-msg"
+          *ngIf="
+            formData.controls['height'].dirty &&
+            formData.controls['height'].errors?.min
+          "
+        >
+          Animal's height must be positive
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        name="toy"
+        id="toy"
+        class="form-control"
+        placeholder="Favorite toy"
+        formControlName="favoriteToy"
+      />
+      <!-- Favorite toy required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['favoriteToy'].dirty &&
+          formData.controls['favoriteToy'].errors?.required
+        "
+      >
+        Required
+      </p>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        name="activity"
+        id="activity"
+        class="form-control"
+        placeholder="Favorite activity"
+        formControlName="favoriteActivity"
+      />
+      <!-- Favorite activity required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['favoriteActivity'].dirty &&
+          formData.controls['favoriteActivity'].errors?.required
+        "
+      >
+        Required
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        name="description"
+        id="description"
+        class="form-control"
+        placeholder="Description"
+        formControlName="description"
+      />
+      <!-- Description required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['description'].dirty &&
+          formData.controls['description'].errors?.required
+        "
+      >
+        Required
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input
+        type="file"
+        accept="image/*"
+        name="images"
+        id="images"
+        class="form-control"
+        multiple
+        required
+        (change)="onFileSelection($event)"
+        formControlName="pictures"
+      />
+      <small id="update-animal-pictures-notification" *ngIf="isUpdateVersionOfForm"
+        >Can't edit animal pictures here. Go to the
+        <em (click)="routeToAnimalsInfoPage()"
+          >animal's main information page</em
+        >
+      </small>
+      <!-- Pictures required validation error -->
+      <p
+        class="error-msg"
+        *ngIf="
+          formData.controls['pictures'].dirty &&
+          formData.controls['pictures'].errors?.required
+        "
+      >
+        Each animal needs at least one picture
+      </p>
+    </div>
+  </div>
+  <div class="row" id="image-previews">
+    <!-- image previews -->
+    <div class="col-3" *ngFor="let image of imagePreviews">
+      <img class="preview-image" src="{{ image }}" />
+    </div>
+  </div>
+  <div
+    id="cancel-btn"
+    class="d-inline-block btn btn-danger"
+    (click)="cancelBtnClickHandler()"
+  >
+    Cancel
+  </div>
+  <button type="submit" id="add-animal-btn" class="btn btn-primary float-end">
+    {{ getSubmitBtnTitle() }}
+  </button>
+</form>
+<app-confirm-popup
+  *ngIf="showingCancelConfirmation"
+  [message]="'Are you sure? You will lose all the information input.'"
+  (cancelEvent)="onDeleteConfirmationCancel()"
+  (confirmEvent)="onDeleteConfirmationConfirm()"
+></app-confirm-popup>

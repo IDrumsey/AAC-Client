@@ -1,0 +1,17 @@
+.tool-btn {
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 5px 10px;
+  /* https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation */
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.tool-btn:hover {
+  box-shadow: 0 0 5px rgb(43, 82, 165);
+  transform: scale(1.02, 1.02);
+}
+
+.tool-btn-name {
+  margin-bottom: 0;
+}

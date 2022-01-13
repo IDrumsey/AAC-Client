@@ -1,0 +1,47 @@
+<div id="animal-pictures">
+  <img
+    *ngIf="dataLoaded"
+    src="{{ 'http://localhost:5000/Images/Animals/' + mainImagePath }}"
+    id="main-picture"
+    class="image"
+  />
+  <div id="other-pictures" *ngIf="showOtherPictures">
+    <img
+      class="image other-image"
+      *ngFor="let picture of otherImagePaths"
+      src="{{ 'http://localhost:5000/Images/Animals/' + picture }}"
+    />
+  </div>
+</div>
+<div>
+  <div id="animal-information" *ngIf="dataLoaded">
+    <h5>Family: {{ animal.classificationName }}</h5>
+    <h5>Species: {{ animal.species }}</h5>
+    <h5>Age: {{ animal.age }}</h5>
+    <h5>Gender: {{ animal.gender }}</h5>
+    <h5>Height (in.): {{ animal.heightInches }}</h5>
+    <h5>Weight (lbs.): {{ animal.weight }}</h5>
+    <h5>Favorite Toy: {{ animal.favoriteToy }}</h5>
+    <h5>Favorite Activity</h5>
+    <h5 class="tab">{{ animal.favoriteActivity }}</h5>
+    <h5>Description</h5>
+    <h5 class="tab">{{ animal.description }}</h5>
+  </div>
+  <div id="options" *ngIf="showingUserOptions">
+    <h3 class="mt-5">Options</h3>
+    <button
+      type="button"
+      *ngIf="dataLoaded"
+      class="btn btn-danger btn-block col-12 mt-2"
+      (click)="showDeleteConfirmation()"
+    >
+      {{ animal.name }} is no longer at this store
+    </button>
+  </div>
+</div>
+<app-confirm-popup
+  *ngIf="showingDeleteConfirmation"
+  [message]="'Are you sure?'"
+  (cancelEvent)="cancelRemove()"
+  (confirmEvent)="confirmRemove()"
+></app-confirm-popup>

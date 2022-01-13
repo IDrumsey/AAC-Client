@@ -1,0 +1,66 @@
+#admin-login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  padding-top: 10px;
+}
+
+#email-input {
+  margin-bottom: 25px;
+}
+
+#password-input {
+  margin-bottom: 10px;
+}
+
+#forgot-password-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#forgot-password-btn:hover {
+  font-weight: bold;
+}
+
+#login-btn {
+  float: right;
+}
+
+.form-control {
+  margin-top: 5px;
+}
+
+#form-header {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+#admin-login-form-close-btn {
+  font-size: 35px;
+  color: rgb(228, 49, 49);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.validation-error-message {
+  color: #f00;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+#error-message {
+  text-align: center;
+  color: #f00;
+}

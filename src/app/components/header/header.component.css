@@ -1,0 +1,49 @@
+#header-bar {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+}
+
+#header-content {
+  margin-left: 25px;
+  height: 75px;
+  display: flex;
+  position: relative;
+}
+
+#site-logo {
+  height: 100%;
+  cursor: pointer;
+}
+
+#title-wrapper {
+  display: inline-block;
+  margin-left: 25px;
+  height: 100%;
+}
+
+#website-title {
+  color: rgb(56, 56, 56);
+  margin: 0;
+}
+
+#selected-center-city-name {
+  text-align: right;
+  margin-right: 25px;
+  margin-bottom: 0;
+  color: rgb(107, 107, 107);
+}
+
+#authenticationBtn {
+  margin-left: auto;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}

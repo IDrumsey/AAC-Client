@@ -1,0 +1,7 @@
+<div id="admin-toolbar">
+  <app-admin-tool-btn
+    *ngFor="let tool of tools"
+    [name]="tool.name"
+    (click)="toolBtnClick(tool)"
+  ></app-admin-tool-btn>
+</div>

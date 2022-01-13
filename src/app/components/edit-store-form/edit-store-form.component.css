@@ -1,0 +1,17 @@
+.time-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 25px;
+}
+
+.input-section:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+#btns {
+  display: flex;
+}
+
+#store-text-change-submit-btn {
+  margin-left: auto;
+}

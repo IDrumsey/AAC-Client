@@ -1,0 +1,22 @@
+<div id="header-bar">
+  <div id="header-content">
+    <!-- The site logo -->
+    <img
+      id="site-logo"
+      src="assets/logo.svg"
+      alt="site-logo"
+      (click)="logoClickHandler()"
+    />
+    <div id="title-wrapper">
+      <h1 id="website-title">{{ websiteTitle }}</h1>
+      <h4 *ngIf="selectedCenter" id="selected-center-city-name">
+        {{ selectedCenter.address }} Center
+      </h4>
+    </div>
+    <fa-icon
+      id="authenticationBtn"
+      [icon]="currentBtn"
+      (click)="onAuthenticationBtnClick()"
+    ></fa-icon>
+  </div>
+</div>
